@@ -1,0 +1,37 @@
+{
+  "name": "redux-saga-call-api",
+  "version": "1.0.0",
+  "description": "Redux saga for api calls",
+  "repository": "git@github.com:miklnikl/redux-saga-call-api.git",
+  "author": "Mikhail Zhdanov <novihnet@gmail.com>",
+  "license": "MIT",
+  "main": "dist/redux-saga-call-api.cjs.js",
+  "module": "dist/redux-saga-call-api.esm.js",
+  "browser": "dist/redux-saga-call-api.umd.js",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "rollup -c -w",
+    "build": "rollup -c",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:types": "tsc -p ./tsconfig.json --outDir build --declaration true && api-extractor run",
+    "docs": "typedoc src --out docs"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.5",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "eslint": "^8.51.0",
+    "rollup": "^4.0.2",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.6.2",
+    "typescript": "5.0.4"
+  },
+  "dependencies": {
+    "@microsoft/api-extractor": "^7.38.0",
+    "redux-saga": "^1.2.3",
+    "typedoc": "^0.25.2"
+  }
+}
