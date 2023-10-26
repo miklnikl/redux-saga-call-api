@@ -70,4 +70,9 @@ function* fetchData(request) {
     }
 }
 
-export { callApi, callApiSaga };
+var index = {
+    callApiSaga,
+    callApi,
+};
+
+export { index as default };

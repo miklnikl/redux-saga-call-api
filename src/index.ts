@@ -1,4 +1,7 @@
 import { callApi } from "./lib/actions";
 import { callApiSaga } from "./lib/saga";
 
-export { callApiSaga, callApi };
+export default {
+  callApiSaga,
+  callApi,
+};

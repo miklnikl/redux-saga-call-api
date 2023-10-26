@@ -72,5 +72,9 @@ function* fetchData(request) {
     }
 }
 
-exports.callApi = callApi;
-exports.callApiSaga = callApiSaga;
+var index = {
+    callApiSaga,
+    callApi,
+};
+
+module.exports = index;
