@@ -1,7 +1,5 @@
-import { callApi } from "./lib/actions";
-import { callApiSaga } from "./lib/saga";
+import { callApi as actionCreator } from "./lib/actions";
+import { callApiSaga as saga } from "./lib/saga";
 
-export default {
-  callApiSaga,
-  callApi,
-};
+export const callApiSaga = saga;
+export const callApi = actionCreator;
