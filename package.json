@@ -1,12 +1,18 @@
 {
   "name": "redux-saga-call-api",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Redux saga for calling api",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "repository": "git@github.com:miklnikl/redux-saga-call-api.git",
   "author": "Mikhail Zhdanov <novihnet@gmail.com>",
   "license": "MIT",
+  "keywords": [
+    "redux",
+    "saga",
+    "api",
+    "call api"
+  ],
   "scripts": {
     "build": "tsc"
   },
