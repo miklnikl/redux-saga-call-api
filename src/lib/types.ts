@@ -18,3 +18,7 @@ export type CallApiRequest<data> = {
   method: HTTPRequestMethods;
   data?: data;
 };
+
+export type Store = {
+  dispatch: ({ type, payload }: CallApiAction<any>) => void;
+};

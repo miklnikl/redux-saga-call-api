@@ -1,12 +1,8 @@
-import { CallApiAction, CallApiRequest } from "./types";
+import { sagaStore } from "./saga";
+import { CallApiRequest } from "./types";
 
-export const callApi = <data>(
-  data: CallApiRequest<data>,
-  store: {
-    dispatch: ({ type, payload }: CallApiAction<data>) => void;
-  }
-) => {
-  store.dispatch({
+export const callApi = <data>(data: CallApiRequest<data>) => {
+  sagaStore.dispatch({
     type: data.actionTypes[0],
     payload: { isCallApiRequest: true, ...data },
   });

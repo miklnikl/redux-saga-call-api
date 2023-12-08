@@ -4,7 +4,7 @@
 
 ## Prerequisites
 
-For progects with `redux` and `redux-saga`, written on `typescript`
+For projects with `redux` and `redux-saga`, written on `typescript`
 
 ## Getting Started
 
@@ -33,11 +33,12 @@ Example:
 ```tsx
 import createSagaMiddleware from 'redux-saga';
 import { callApiSaga } from 'redux-saga-call-api';
+import { store } from '.'; // redux store
 
 const sagaMiddleware = createSagaMiddleware();
 
 function* rootSaga() {
-  yield fork(callApiSaga);
+  yield fork(callApiSaga, store);
   ...
 }
 
@@ -45,25 +46,11 @@ sagaMiddleware.run(rootSaga);
 
 ```
 
-Now you can use `callApi` action creator for calling api.
-Create callApi hight order function to provide store to the callApi
-
-```tsx
-// callApi.ts
-import { store } from "../store";
-import { callApi as callApiImported } from "redux-saga-call-api";
-import { CallApiRequest } from "redux-saga-call-api/lib/lib/types";
-
-export const callApi = (data: CallApiRequest<unknown>) => {
-  callApiImported(data, store);
-};
-```
-
 Call api whereever you want inside your app, for example:
 
 ```tsx
 import { HTTPRequestMethods } from "redux-saga-call-api/lib/lib/types";
-import { callApi } from "./callApi.ts";
+import { callApi } from "redux-saga-call-api";
 
 //GET
 export const getData = async (id: string) => {

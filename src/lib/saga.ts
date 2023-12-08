@@ -1,8 +1,15 @@
 import { put, takeEvery } from "redux-saga/effects";
-import { CallApiAction } from "./types";
+import { CallApiAction, Store } from "./types";
 import { apiRequest } from "./utils";
 
-export const callApiSaga = function* () {
+export let sagaStore: Store = {
+  dispatch: () => {
+    console.warn("sagaStore is not defined");
+  },
+};
+
+export const callApiSaga = function* (store: Store) {
+  sagaStore = store;
   yield takeEvery("*", fetchData);
 };
 
